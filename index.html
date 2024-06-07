@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miguel's Class Notes</title>
+    <link rel="stylesheet" href="Assets/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Boot Camp Notes</h1>
+    </header>
+
+    <section id="logical-operators-conditionals">
+        <h2>1. Logical Operators and Conditionals</h2>
+
+        <div class="collapsible">
+            <h3>Logical Operators</h3>
+            <div class="content">
+                <pre>
+<strong>AND (&&):</strong>
+let a = true;
+let b = true;
+let result = a && b; // result is true
+
+<strong>OR (||):</strong>
+let a = true;
+let b = false;
+let result = a || b; // result is true
+
+<strong>NOT (!):</strong>
+let a = true;
+let result = !a; // result is false
+                </pre>
+            </div>
+        </div>
+
+        <div class="collapsible">
+            <h3>Conditionals</h3>
+            <div class="content">
+                <pre>
+<strong>If Statement:</strong>
+let age = 18;
+if (age >= 18) {
+    console.log("You are an adult.");
+}
+
+<strong>Else If Statement:</strong>
+let score = 75;
+if (score >= 90) {
+    console.log("Grade: A");
+} else if (score >= 80) {
+    console.log("Grade: B");
+} else if (score >= 70) {
+    console.log("Grade: C");
+} else {
+    console.log("Grade: F");
+}
+
+<strong>Else Statement:</strong>
+let temperature = 20;
+if (temperature > 30) {
+    console.log("It's hot outside.");
+} else {
+    console.log("It's not hot outside.");
+}
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="variables-scope">
+        <h2>2. Variables and Scope</h2>
+
+        <div class="collapsible">
+            <h3>Global Scope</h3>
+            <div class="content">
+                <pre>
+let globalVar = "I'm global";
+function test() {
+    console.log(globalVar); // Accessible here
+}
+                </pre>
+            </div>
+        </div>
+
+        <div class="collapsible">
+            <h3>Local Scope</h3>
+            <div class="content">
+                <pre>
+function test() {
+    let localVar = "I'm local";
+    console.log(localVar); // Accessible here
+}
+console.log(localVar); // Error: localVar is not defined
+                </pre>
+            </div>
+        </div>
+
+        <div class="collapsible">
+            <h3>Constants</h3>
+            <div class="content">
+                <pre>
+const person = { name: "Alice", age: 25 };
+person.age = 26; // Allowed
+person = { name: "Bob", age: 30 }; // Error: Assignment to constant variable
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="loops">
+        <h2>3. Loops</h2>
+
+        <div class="collapsible">
+            <h3>For Loop</h3>
+            <div class="content">
+                <pre>
+<strong>Basic Structure:</strong>
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+<strong>Components:</strong>
+Initialization: let i = 0;
+Condition: i < 5;
+Increment: i++;
+                </pre>
+            </div>
+        </div>
+
+        <div class="collapsible">
+            <h3>For...Of Loop</h3>
+            <div class="content">
+                <pre>
+let animals = ["cat", "dog", "bird"];
+for (let animal of animals) {
+    console.log(animal);
+}
+                </pre>
+            </div>
+        </div>
+
+        <div class="collapsible">
+            <h3>While Loop</h3>
+            <div class="content">
+                <pre>
+let i = 0;
+while (i < 5) {
+    console.log(i);
+    i++;
+}
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="examples-applications">
+        <h2>4. Examples and Applications</h2>
+
+        <div class="collapsible">
+            <h3>Updating Records</h3>
+            <div class="content">
+                <pre>
+let orders = [{id: 1, status: "pending"}, {id: 2, status: "pending"}];
+for (let order of orders) {
+    order.status = "shipped";
+}
+console.log(orders); // All orders' status updated to "shipped"
+                </pre>
+            </div>
+        </div>
+
+        <div class="collapsible">
+            <h3>Email Application</h3>
+            <div class="content">
+                <pre>
+let emails = [{id: 1, read: false}, {id: 2, read: false}];
+for (let email of emails) {
+    email.read = true;
+}
+console.log(emails); // All emails marked as read
+                </pre>
+            </div>
+        </div>
+
+        <div class="collapsible">
+            <h3>Iterating Through Lists</h3>
+            <div class="content">
+                <pre>
+let zooAnimals = ["bear", "giraffe", "penguin"];
+for (let i = 0; i < zooAnimals.length; i++) {
+    console.log(zooAnimals[i]);
+}
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="common-errors-debugging">
+        <h2>5. Common Errors and Debugging</h2>
+
+        <div class="collapsible">
+            <h3>Common Errors</h3>
+            <div class="content">
+                <pre>
+<strong>Off-by-One Errors:</strong>
+for (let i = 0; i <= 5; i++) { // Will run 6 times instead of 5
+    console.log(i);
+}
+
+<strong>Infinite Loops:</strong>
+let i = 0;
+while (i < 5) {
+    console.log(i);
+    // Missing increment: i++;
+}
+                </pre>
+            </div>
+        </div>
+
+        <div class="collapsible">
+            <h3>Debugging Tips</h3>
+            <div class="content">
+                <pre>
+<strong>Console Logging:</strong>
+let i = 0;
+while (i < 5) {
+    console.log("Current value of i: " + i);
+    i++;
+
+<strong>Breakpoints:</strong> In an IDE or browser developer tools, set breakpoints to pause execution and inspect variable states.
+
+<strong>Reading Error Messages:</strong> Carefully read error messages to understand what went wrong and where in your code it occurred.
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.collapsible h3').forEach(header => {
+            header.addEventListener('click', function() {
+                this.classList.toggle('active');
+                let content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
