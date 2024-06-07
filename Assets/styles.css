@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #8a2be2; /* Neon purple background */
+    color: #dcdcdc; /* Light grey text color */
+    padding: 20px;
+}
+
+header h1 {
+    color: #fff; /* White color for the header */
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+.collapsible h3 {
+    background-color: #4b0082; /* Darker purple for better contrast */
+    padding: 1em;
+    margin: 0;
+    border: 2px solid #D2A264; /* Thick outline */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    color: #dcdcdc; /* Light grey text color */
+}
+
+.collapsible h3:hover {
+    background-color: #7a1fca; /* Slightly lighter purple on hover */
+}
+
+.collapsible .content {
+    display: none;
+    padding: 1em;
+    border: 2px solid #D2A264; /* Thick outline */
+    border-top: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #4b0082; /* Darker purple for better contrast */
+    color: #dcdcdc; /* Light grey text color */
+}
+
+.collapsible h3.active + .content {
+    display: block;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+    section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    section > div {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 15px;
+    }
+}
